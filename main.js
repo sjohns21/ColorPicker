@@ -25,6 +25,8 @@ function init() {
   //reset newColor sbutton text
   newColors.textContent = "NEW COLORS";
 
+  message.textContent = "";
+
   //destroy squares
   while (colors.childElementCount > 0) {
     colors.removeChild(colors.childNodes[0]);
@@ -67,7 +69,6 @@ function init() {
 
 function won(targetRgb) {
   header.style.background = targetRgb;
-  // console.log(colors.childElementCount);
   for (i = 0; i < colors.childElementCount; i++) {
     colors.childNodes[i].style.background = targetRgb;
   }
@@ -76,6 +77,18 @@ function won(targetRgb) {
 }
 
 newColors.addEventListener("click", init);
+
+easy.addEventListener("click", function() {
+  this.classList.add("active");
+  hard.classList.remove("active");
+  init();
+});
+
+hard.addEventListener("click", function() {
+  this.classList.add("active");
+  easy.classList.remove("active");
+  init();
+});
 
 var selectedSquare;
 
