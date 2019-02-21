@@ -46,16 +46,17 @@ function init() {
     newDiv.classList.add("square");
     newDiv.style.background = randRgb();
     newDiv.textContent = newDiv.style.background;
-    colors.appendChild(newDiv);
-    // add listeners to each
-    newDiv.addEventListener("click", function() {
+    function squareListen() {
       selectedSquare = this;
       if (selectedSquare == targetSquare) {
         won(targetRgb);
       } else {
         message.textContent = "Try again!";
       }
-    });
+    }
+    newDiv.addEventListener("click", squareListen);
+
+    colors.appendChild(newDiv);
   }
 
   //select one to be the target
