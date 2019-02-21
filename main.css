@@ -1,6 +1,5 @@
-.active {
-  background: #5183b4;
-  color: white;
+body {
+  background: #232223;
 }
 
 h1 {
@@ -10,6 +9,7 @@ h1 {
 h2 {
   margin: 0px;
 }
+
 .square {
   display: inline-block;
   height: 100px;
@@ -17,6 +17,11 @@ h2 {
   margin: 10px;
   background: white;
   border-radius: 10%;
+}
+
+.active {
+  background: #5183b4;
+  color: white;
 }
 
 #header {
@@ -40,8 +45,4 @@ h2 {
 #colors {
   max-width: 400px;
   margin: auto;
-}
-
-body {
-  background: #232223;
 }
