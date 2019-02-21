@@ -51,6 +51,7 @@ function init() {
       if (selectedSquare == targetSquare) {
         won();
       } else {
+        this.style.visibility = "hidden";
         message.textContent = "Try again!";
       }
     });
