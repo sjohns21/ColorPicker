@@ -45,7 +45,7 @@ function init() {
     var newDiv = document.createElement("div");
     newDiv.classList.add("square");
     newDiv.style.background = randRgb();
-    newDiv.textContent = newDiv.style.background;
+    // newDiv.textContent = newDiv.style.background;
     newDiv.addEventListener("click", function() {
       selectedSquare = this;
       if (selectedSquare == targetSquare) {

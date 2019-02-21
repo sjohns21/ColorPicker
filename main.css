@@ -1,9 +1,14 @@
 .active {
-  background: blue;
+  background: #5183b4;
+  color: white;
 }
 
 h1 {
   text-transform: uppercase;
+}
+
+h2 {
+  margin: 0px;
 }
 .square {
   display: inline-block;
@@ -11,6 +16,7 @@ h1 {
   width: 100px;
   margin: 10px;
   background: white;
+  border-radius: 10%;
 }
 
 #header {
@@ -18,6 +24,12 @@ h1 {
   background: #5183b4;
 }
 
-/* #colors div {
-  display: inline;
-} */
+#message {
+  display: inline-block;
+  width: 100px;
+}
+
+#colors {
+  max-width: 400px;
+  margin: auto;
+}
