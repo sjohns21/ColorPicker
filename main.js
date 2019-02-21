@@ -2,6 +2,9 @@ var easy = document.querySelector("#easy");
 var hard = document.querySelector("#hard");
 var colors = document.querySelector("#colors");
 var rgbDisplay = document.querySelector("#rgbDisplay");
+var message = document.querySelector("#message");
+var header = document.querySelector("#header");
+var newColors = document.querySelector("#newColors");
 
 function randRgb() {
   return (
@@ -15,23 +18,65 @@ function randRgb() {
   );
 }
 
-document.body.style.background = randRgb();
+function init() {
+  //reset header color
+  header.style.background = "#5183B4";
 
-if (easy.classList.contains("active")) {
-  console.log("easy active");
+  //reset newColor sbutton text
+  newColors.textContent = "NEW COLORS";
+
+  //destroy squares
+  while (colors.childElementCount > 0) {
+    colors.removeChild(colors.childNodes[0]);
+  }
+
+  var squareCount;
+
+  if (easy.classList.contains("active")) {
+    squareCount = 3;
+  } else {
+    squareCount = 6;
+  }
 
   //create random color squares
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < squareCount; i++) {
     var newDiv = document.createElement("div");
     newDiv.classList.add("square");
     newDiv.style.background = randRgb();
+    newDiv.textContent = newDiv.style.background;
     colors.appendChild(newDiv);
+    // add listeners to each
+    newDiv.addEventListener("click", function() {
+      selectedSquare = this;
+      if (selectedSquare == targetSquare) {
+        won(targetRgb);
+      } else {
+        message.textContent = "Try again!";
+      }
+    });
   }
+
   //select one to be the target
-  var targetIndex = Math.floor(Math.random() * 3);
+  var targetIndex = Math.floor(Math.random() * squareCount);
   var targetSquare = colors.childNodes[targetIndex];
   var targetRgb = targetSquare.style.background;
 
-  //set target rgb to header
+  //set target rgb text to header
   rgbDisplay.textContent = targetRgb;
 }
+
+function won(targetRgb) {
+  header.style.background = targetRgb;
+  // console.log(colors.childElementCount);
+  for (i = 0; i < colors.childElementCount; i++) {
+    colors.childNodes[i].style.background = targetRgb;
+  }
+  message.textContent = "You won!";
+  newColors.textContent = "PLAY AGAIN?";
+}
+
+newColors.addEventListener("click", init);
+
+var selectedSquare;
+
+init();
