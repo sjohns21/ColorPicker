@@ -29,7 +29,19 @@ h2 {
   width: 100px;
 }
 
+#divider button {
+  color: white;
+}
+
+#divider span {
+  color: white;
+}
+
 #colors {
   max-width: 400px;
   margin: auto;
+}
+
+body {
+  background: #232223;
 }
