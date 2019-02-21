@@ -1,0 +1,16 @@
+.active {
+  background: blue;
+}
+
+/* body {
+  background: rgb(50, 50, 50);
+} */
+h1 {
+  text-transform: uppercase;
+}
+.square {
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  background: white;
+}
