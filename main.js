@@ -20,7 +20,7 @@ function randRgb() {
 
 function init() {
   //reset header color
-  header.style.background = "#5183B4";
+  header.style.backgroundColor = "#5183B4";
 
   //reset newColor sbutton text
   newColors.textContent = "NEW COLORS";
@@ -44,8 +44,8 @@ function init() {
   for (i = 0; i < squareCount; i++) {
     var newDiv = document.createElement("div");
     newDiv.classList.add("square");
-    newDiv.style.background = randRgb();
-    // newDiv.textContent = newDiv.style.background;
+    newDiv.style.backgroundColor = randRgb();
+    // newDiv.textContent = newDiv.style.backgroundColor;
     newDiv.addEventListener("click", function() {
       selectedSquare = this;
       if (selectedSquare == targetSquare) {
@@ -62,15 +62,15 @@ function init() {
   //select one to be the target
   var targetIndex = Math.floor(Math.random() * squareCount);
   var targetSquare = colors.childNodes[targetIndex];
-  var targetRgb = targetSquare.style.background;
+  var targetRgb = targetSquare.style.backgroundColor;
 
   //set target rgb text to header
   rgbDisplay.textContent = targetRgb;
 
   function won() {
-    header.style.background = targetRgb;
+    header.style.backgroundColor = targetRgb;
     for (i = 0; i < colors.childElementCount; i++) {
-      colors.childNodes[i].style.background = targetRgb;
+      colors.childNodes[i].style.backgroundColor = targetRgb;
     }
     message.textContent = "You won!";
     newColors.textContent = "PLAY AGAIN?";
