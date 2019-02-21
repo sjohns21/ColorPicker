@@ -46,15 +46,14 @@ function init() {
     newDiv.classList.add("square");
     newDiv.style.background = randRgb();
     newDiv.textContent = newDiv.style.background;
-    function squareListen() {
+    newDiv.addEventListener("click", function() {
       selectedSquare = this;
       if (selectedSquare == targetSquare) {
-        won(targetRgb);
+        won();
       } else {
         message.textContent = "Try again!";
       }
-    }
-    newDiv.addEventListener("click", squareListen);
+    });
 
     colors.appendChild(newDiv);
   }
@@ -66,15 +65,15 @@ function init() {
 
   //set target rgb text to header
   rgbDisplay.textContent = targetRgb;
-}
 
-function won(targetRgb) {
-  header.style.background = targetRgb;
-  for (i = 0; i < colors.childElementCount; i++) {
-    colors.childNodes[i].style.background = targetRgb;
+  function won() {
+    header.style.background = targetRgb;
+    for (i = 0; i < colors.childElementCount; i++) {
+      colors.childNodes[i].style.background = targetRgb;
+    }
+    message.textContent = "You won!";
+    newColors.textContent = "PLAY AGAIN?";
   }
-  message.textContent = "You won!";
-  newColors.textContent = "PLAY AGAIN?";
 }
 
 newColors.addEventListener("click", init);
