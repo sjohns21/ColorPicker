@@ -10,6 +10,19 @@ h2 {
   margin: 0px;
 }
 
+.btn {
+  border-radius: 0;
+  background: white;
+  color: #5183b4;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #5183b4;
+  color: white;
+}
+
 .square {
   display: inline-block;
   height: 100px;
@@ -17,16 +30,22 @@ h2 {
   margin: 10px;
   background: white;
   border-radius: 10%;
+  transition: all 0.3s;
 }
 
-.active {
+.btn.active {
   background: #5183b4;
   color: white;
+}
+
+.btn:focus {
+  box-shadow: none;
 }
 
 #header {
   color: white;
   background: #5183b4;
+  padding: 10px;
 }
 
 #message {
@@ -34,12 +53,8 @@ h2 {
   width: 100px;
 }
 
-#divider button {
-  color: white;
-}
-
-#divider span {
-  color: white;
+#divider {
+  background: white;
 }
 
 #colors {

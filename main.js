@@ -51,7 +51,7 @@ function init() {
       if (selectedSquare == targetSquare) {
         won();
       } else {
-        this.style.visibility = "hidden";
+        this.style.backgroundColor = "#232223";
         message.textContent = "Try again!";
       }
     });
@@ -71,7 +71,6 @@ function init() {
     header.style.backgroundColor = targetRgb;
     for (i = 0; i < colors.childElementCount; i++) {
       colors.childNodes[i].style.backgroundColor = targetRgb;
-      colors.childNodes[i].style.visibility = "visible";
     }
     message.textContent = "You won!";
     newColors.textContent = "PLAY AGAIN?";
