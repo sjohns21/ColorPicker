@@ -23,16 +23,6 @@ h2 {
   color: white;
 }
 
-.square {
-  display: inline-block;
-  height: 100px;
-  width: 100px;
-  margin: 10px;
-  background: white;
-  border-radius: 10%;
-  transition: all 0.3s;
-}
-
 .btn.active {
   background: #5183b4;
   color: white;
@@ -48,16 +38,26 @@ h2 {
   padding: 10px;
 }
 
+#divider {
+  background: white;
+}
+
 #message {
   display: inline-block;
   width: 100px;
 }
 
-#divider {
-  background: white;
-}
-
 #colors {
   max-width: 400px;
   margin: auto;
+}
+
+.square {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  background: white;
+  border-radius: 10%;
+  transition: all 0.3s;
 }
